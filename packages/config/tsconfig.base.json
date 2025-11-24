@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* === Основные настройки TypeScript === */
+    "target": "ES2020",
+    "module": "CommonJS",
+    "lib": ["ES2020", "DOM"],
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@api/*": ["../../apps/api/src/*"],
+      "@client/*": ["../../apps/client/src/*"],
+      "@domain/*": ["../domain/src/*"],
+      "@trpc/*": ["../trpc/src/*"]
+    },
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
+
+  "exclude": ["node_modules", "dist"]
+}
