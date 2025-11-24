@@ -1,0 +1,17 @@
+{
+  "name": "deliv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fckngawsm/deliv.git",
+  "author": "Kirill <marchenko.kiri11@yandex.ru>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.6.1"
+  },
+  "packageManager": "yarn@1.22.21"
+}
