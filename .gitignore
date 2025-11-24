@@ -1,0 +1,57 @@
+node_modules/
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+dist/
+build/
+.cache/
+turbo/
+turbo-cache/
+.vscode/
+.idea/
+
+# Turborepo remote cache
+.turbo/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage / Testing
+coverage/
+.nyc_output/
+
+# Next.js
+.next/
+out/
+
+# Build artifacts
+*.local
+*.pid
+*.seed
+*.tgz
+*.swp
+*.swo
+
+# Temporary files
+tmp/
+temp/
