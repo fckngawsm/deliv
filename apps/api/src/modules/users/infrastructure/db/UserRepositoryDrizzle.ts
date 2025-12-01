@@ -1,4 +1,7 @@
-import { toDb, toDomain } from "@api/infrastructure/mappers/userMapper";
+import {
+  toDb,
+  toDomain,
+} from "@api/modules/users/infrastructure/mappers/userMapper";
 import { eq } from "drizzle-orm";
 import { User } from "../../domain/entities/User";
 import { UserRepository } from "../../domain/repositories/UserRepository";
