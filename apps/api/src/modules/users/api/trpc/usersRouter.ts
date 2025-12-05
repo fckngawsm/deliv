@@ -6,6 +6,6 @@ export const createUsersRouter = (deps: UsersProceduresDeps) => {
   const procedures = createUsersProcedures(deps);
 
   return router({
-    register: procedures.register,
+    ...procedures,
   });
 };

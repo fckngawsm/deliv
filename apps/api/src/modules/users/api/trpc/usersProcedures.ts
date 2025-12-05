@@ -14,4 +14,34 @@ export const createUsersProcedures = (deps: UsersProceduresDeps) => ({
       const user = await deps.registerUserUseCase.execute(input);
       return user;
     }),
+  block: publicProcedure
+    .input(
+      z.object({
+        id: z.number().positive(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const user = await deps.blockUserUseCase.execute(input);
+      return user;
+    }),
+  unblock: publicProcedure
+    .input(
+      z.object({
+        id: z.number().positive(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const user = await deps.unblockUserUseCase.execute(input);
+      return user;
+    }),
+  getUserById: publicProcedure
+    .input(
+      z.object({
+        id: z.number().positive(),
+      })
+    )
+    .query(async ({ input }) => {
+      const user = await deps.getUserByIdUseCase.execute(input);
+      return user;
+    }),
 });

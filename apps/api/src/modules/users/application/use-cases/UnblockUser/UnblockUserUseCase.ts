@@ -1,9 +1,9 @@
 import { UseCase } from "@api/contracts/UseCase";
 import { User } from "@api/modules/users/domain/entities/User";
 import { UserRepository } from "@api/modules/users/domain/repositories/UserRepository";
-import { RegisterUserDto } from "./RegisterUserDto";
+import { UnblockUserDto } from "./UnblockUserDto";
 
-export class RegisterUserUseCase implements UseCase<RegisterUserDto, User> {
+export class UnblockUserUseCase implements UseCase<UnblockUserDto, User> {
   constructor(private readonly usersRepo: UserRepository) {}
-  execute(input: RegisterUserDto) {}
+  execute(input: UnblockUserDto) {}
 }
