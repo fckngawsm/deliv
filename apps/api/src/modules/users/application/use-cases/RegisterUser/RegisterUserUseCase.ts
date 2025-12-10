@@ -5,5 +5,10 @@ import { RegisterUserDto } from "./RegisterUserDto";
 
 export class RegisterUserUseCase implements UseCase<RegisterUserDto, User> {
   constructor(private readonly usersRepo: UserRepository) {}
-  execute(input: RegisterUserDto) {}
+  async execute(input: RegisterUserDto) {
+    const existingUser = await this.usersRepo.findByEmail(input.email);
+
+    if (existingUser)
+      throw new Error("Пользователь с таким email уже существует");
+  }
 }

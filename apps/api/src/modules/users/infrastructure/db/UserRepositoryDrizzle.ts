@@ -33,8 +33,16 @@ export class UserRepositoryDrizzle implements UserRepository {
     return toDomain(rows[0]);
   }
 
-  async save(user: User): Promise<void> {
+  async register(user: User): Promise<void> {
     const data = toDb(user);
+
+    const [existingUser] = await this.db
+      .select()
+      .from(usersTable)
+      .where(eq(usersTable.email, user.email));
+
+    if (existingUser)
+      throw new Error("Пользователь с таким email уже существует");
 
     await this.db.insert(usersTable).values(data).onConflictDoUpdate({
       target: usersTable.id,
